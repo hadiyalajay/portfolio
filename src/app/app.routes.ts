@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [
+export const AppRoutes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.routes').then((m) => m.DashboardRoutes),
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
+    path :'',
+    redirectTo :'dashboard',
+    pathMatch: 'full'
+  }
 ];
